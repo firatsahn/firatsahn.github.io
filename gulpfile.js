@@ -60,7 +60,7 @@ gulp.task('minify-js', function() {
     }))
 });
 
-// Copy vendor files from /node_modules into /vendor
+
 // NOTE: requires `npm install` before running!
 gulp.task('copy', function() {
   gulp.src([
@@ -69,13 +69,13 @@ gulp.task('copy', function() {
       '!**/bootstrap-theme.*',
       '!**/*.map'
     ])
-    .pipe(gulp.dest('vendor/bootstrap'))
+    .pipe(gulp.dest('files/bootstrap'))
 
   gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-    .pipe(gulp.dest('vendor/jquery'))
+    .pipe(gulp.dest('files/jquery'))
 
   gulp.src(['node_modules/jquery.easing/*.js'])
-    .pipe(gulp.dest('vendor/jquery-easing'))
+    .pipe(gulp.dest('files/jquery-easing'))
 
   gulp.src([
       'node_modules/font-awesome/**',
@@ -85,7 +85,7 @@ gulp.task('copy', function() {
       '!node_modules/font-awesome/*.md',
       '!node_modules/font-awesome/*.json'
     ])
-    .pipe(gulp.dest('vendor/font-awesome'))
+    .pipe(gulp.dest('files/font-awesome'))
 
   gulp.src([
       'node_modules/devicons/**/*',
@@ -96,10 +96,10 @@ gulp.task('copy', function() {
       '!node_modules/devicons/!SVG',
       '!node_modules/devicons/!SVG/**/*'
     ])
-    .pipe(gulp.dest('vendor/devicons'))
+    .pipe(gulp.dest('files/devicons'))
 
   gulp.src(['node_modules/simple-line-icons/**/*', '!node_modules/simple-line-icons/*.json', '!node_modules/simple-line-icons/*.md'])
-    .pipe(gulp.dest('vendor/simple-line-icons'))
+    .pipe(gulp.dest('files/simple-line-icons'))
 })
 
 // Default task
